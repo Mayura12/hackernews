@@ -1,0 +1,13 @@
+.load-more-button {
+  background-color: #ffc700;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.79px;
+  text-align: left;
+  color: #000000;
+  border-radius: 12px;
+  padding: 13px;
+  width: 265px;
+  text-align: center;
+}
