@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import StoryList from './components/StoryList';
+import Header from './components/Header';
+import LoadMoreButton from './components/LoadMoreButton';
+import { useStories } from './hooks/useStories';
+import { StoryType } from './types/story';
+import "./App.css"
+import Spinner from './components/Spinner';
 
-function App() {
+const App: React.FC = () => {
+  const [storyType, setStoryType] = useState<StoryType>('new');
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(20);
+  const { stories, loading, error } = useStories(storyType, start, end);
+
+  const loadMore = () => {
+    setStart(start + 20);
+    setEnd(end + 20);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-body'>
+      <Header setStoryType={setStoryType} resetPagination={() => { setStart(0); setEnd(20); }} />
+      {loading && <Spinner />}
+      {error && <p>{error}</p>}
+      {!loading && (
+        <>
+          <StoryList stories={stories} start={start} />
+          <div className='load-more-button-body'>
+            {stories.length > 0 && <LoadMoreButton loadMore={loadMore} />}
+          </div>
+          <div className='footer'>HACKERNEWS.</div>
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default App;
