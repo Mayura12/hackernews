@@ -1,4 +1,4 @@
-export type StoryType = 'new' | 'top' | 'ask' | 'show' | 'jobs';
+export type StoryType = "new" | "top" | "ask" | "show" | "jobs";
 export interface Story {
   id: number;
   title: string;
@@ -7,7 +7,3 @@ export interface Story {
   time: number;
   url: string;
 }
-
-
-
-

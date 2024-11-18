@@ -1,3 +1,7 @@
+header {
+  width: 100%;
+}
+
 .header-title {
   display: flex;
   align-items: center;
@@ -13,7 +17,7 @@
   color: #fbc91b;
 }
 
-button {
+.buttons {
   cursor: pointer;
   border: none;
   background: #fbc91b;
@@ -26,7 +30,8 @@ button {
   font-weight: 700;
   line-height: 16px;
 }
-button:hover {
+
+.buttons:hover {
   background-color: #bc9b23;
 }
 
@@ -36,4 +41,9 @@ button:hover {
 
 .inactive {
   background-color: #f2f2f2;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
 }
