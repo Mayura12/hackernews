@@ -1,0 +1,39 @@
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1px;
+  font-size: 49px;
+  box-shadow: 0px 3px 28px 0px #00000014;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.hacker {
+  color: #fbc91b;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: #fbc91b;
+  color: black;
+  padding: 4px 12px;
+  margin: 0 5px;
+  border-radius: 4px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+}
+button:hover {
+  background-color: #bc9b23;
+}
+
+.active {
+  background-color: #fbc91b;
+}
+
+.inactive {
+  background-color: #f2f2f2;
+}
